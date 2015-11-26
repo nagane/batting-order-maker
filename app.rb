@@ -9,4 +9,12 @@ class Server < Sinatra::Base
   get '/' do
     haml :index
   end 
+
+  get '/home' do
+    haml :index
+  end 
+
+  get '/make' do
+    haml :make
+  end
 end
