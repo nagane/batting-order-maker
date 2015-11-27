@@ -1,3 +1,16 @@
-%p make BO
+:javascript
+  $(function(){
+    $('#new_link').click(function(){
+      alert('clicked');
+      return false;
+    });
+  });
 
-%a{ href: "home" } home
+%html
+  %body
+    %p make BO
+    %a{ href: "home" } home
+    %form{:action=>"/", :method=>"post"}
+      %input{:type=>"texfield",:name=>"str"}
+      %input{:type=>"submit", :value=>"send"}
+
