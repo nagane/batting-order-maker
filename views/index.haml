@@ -1,8 +1,8 @@
 %html
   %head
-    <script type="text/javascript">
-    document.write("test");
-    </script>
-    %body
-      %h1 BOM
-      %a{ href: "make" } make
+    %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
+    %script{:type => 'text/javascript', :src => "./js/main.js"}
+  %body
+    %h1 BOM
+    %a{ href: "make" } make
+    %p top PAGE

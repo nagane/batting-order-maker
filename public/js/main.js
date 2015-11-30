@@ -1,1 +1,3 @@
-alert('test')
+$(function(){
+$('p').click(function() {$(this).fadeOut('slow');});
+});
