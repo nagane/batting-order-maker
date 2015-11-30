@@ -1,14 +1,12 @@
-:javascript
-  $(function(){
-    $('#new_link').click(function(){
-      alert('clicked');
-      return false;
-    });
-  });
-
 %html
   %head
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
+
+  :javascript
+    $(function(){
+    $('p').click(function() {$(this).fadeOut('slow');});
+    });
+
   %body
     %p make BO
     %a{ href: "home" } home
