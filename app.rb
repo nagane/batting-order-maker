@@ -17,4 +17,8 @@ class Server < Sinatra::Base
   get '/make' do
     haml :make
   end
+
+  post '/create-order' do
+    "test"
+  end
 end
