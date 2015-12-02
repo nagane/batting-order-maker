@@ -4,6 +4,7 @@ require 'sass'
 require 'coffee-script'
 
 require_relative 'models/init'
+require_relative 'models/orders'
 
 class Server < Sinatra::Base
   get '/' do
@@ -19,6 +20,6 @@ class Server < Sinatra::Base
   end
 
   post '/create-order' do
-    "test"
+    "test #{params[:str]}"
   end
 end
