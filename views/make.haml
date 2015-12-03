@@ -1,6 +1,7 @@
 %html
   %head
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
+    %script{:type => 'text/javascript', :src => "./js/form_append.js"}
 
   :javascript
     $(function(){
@@ -10,7 +11,13 @@
   %body
     %p make BO
     %a{ href: "home" } home
-    %form{:action=>"/create-order", :method=>"post"}
-      %input{:type=>"texfield",:name=>"str"}
-      %input{:type=>"submit", :value=>"send"}
+    %form{:action => "/create-order", :method => "post"}
+      %p Title
+      %input{:type => "text",:name => "title"}
+      %p object
+      #append_area
+        %input{:type => "text",:name => "field[]"}
+        %input{:type => "button",:id => "append",:value => "append"}
+      %input{:type => "submit",:value => "send"}
+
 

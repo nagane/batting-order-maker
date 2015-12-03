@@ -21,6 +21,7 @@ class Server < Sinatra::Base
 
   post '/create-order' do
     #"test #{params[:str]}"
-    Orders.create(params[:str])
+    Orders.create(params[:title],params[:field])
+    haml :index
   end
 end
