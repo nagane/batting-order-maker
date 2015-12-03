@@ -1,8 +1,8 @@
 
 class Orders
 
-  def create
-
+  def self.create(title)
+    p title
   end
 
   def delete

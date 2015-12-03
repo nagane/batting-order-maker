@@ -20,6 +20,7 @@ class Server < Sinatra::Base
   end
 
   post '/create-order' do
-    "test #{params[:str]}"
+    #"test #{params[:str]}"
+    Orders.create(params[:str])
   end
 end
