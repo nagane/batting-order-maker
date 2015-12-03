@@ -8,10 +8,7 @@ require_relative 'models/orders'
 
 class Server < Sinatra::Base
   get '/' do
-    haml :index
-  end 
-
-  get '/home' do
+    Orders.get_order_titles
     haml :index
   end 
 

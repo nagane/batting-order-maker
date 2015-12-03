@@ -17,6 +17,10 @@ class Orders
 
   end
 
+  def self.get_order_titles
+
+  end
+
   def delete
 
   end
