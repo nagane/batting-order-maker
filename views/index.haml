@@ -7,3 +7,8 @@
     %a{ href: "make" } make
     %p top PAGE
     %p= @f
+    %p =================
+    - @f.each do |index, title|
+      %a{ href:"/input-data##{index}"} #{title}
+      %br
+
