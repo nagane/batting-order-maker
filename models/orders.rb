@@ -18,8 +18,10 @@ class Orders
   end
 
   def self.get_order_titles
-    #todo topページにorder要素があればリンクを作りたい
-    File.read(@path + "orders-title-hash.txt")
+
+    data = open(@path + "orders-title-hash.txt").read
+    Hash[*data.split("\n").map{|e| e.split(",")}.flatten]
+
   end
 
   def delete
