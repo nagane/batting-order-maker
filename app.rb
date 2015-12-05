@@ -16,6 +16,10 @@ class Server < Sinatra::Base
     haml :make
   end
 
+  get '/input-data' do
+
+  end
+
   post '/create-order' do
     #"test #{params[:str]}"
     Orders.create(params[:title],params[:field])
