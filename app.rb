@@ -22,6 +22,7 @@ class Server < Sinatra::Base
 
   post '/create-order' do
     #"test #{params[:str]}"
+    @f = Orders.get_order_titles
     Orders.create(params[:title],params[:field])
     haml :index
   end
