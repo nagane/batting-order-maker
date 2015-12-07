@@ -1,0 +1,16 @@
+%html
+  %head
+    %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
+  %body
+    %h1 INPUT DATA
+    %a{ href: "/"} home
+    %p= @order_elements
+    %p =================
+    %form{:action => "/create-user", :method => "post"}
+    - @order_elements.each do |e|
+      -# この辺のレイアウトとか、チェックする順番JSとか
+      -# あとユーザデータの設計
+      %input{:type => "checkbox", :name => "increments data"}
+      %p= e
+      %br
+    %input{:type => "submit",:value => "send"}

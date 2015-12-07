@@ -16,8 +16,9 @@ class Server < Sinatra::Base
     haml :make
   end
 
-  get '/input-data' do
-
+  get '/input-data/:order_key' do
+    @order_elements = Orders.get_order_eletemts(params[:order_key])
+    haml :inputdata
   end
 
   post '/create-order' do
