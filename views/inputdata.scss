@@ -1,0 +1,27 @@
+$baseColor: #1967D3;
+body {
+  background: $baseColor
+}
+
+.items {
+  clear: both;
+  padding: 6px 0;
+
+  input[type="checkbox"]  {
+    margin-right: 5px;
+    position: relative;
+
+          &:checked:after {
+              position: absolute;
+                top: 14px;
+          }
+
+    }
+            @for $num from 1 through 10 {
+          input.order#{$num}:checked:after {
+            content: "#{$num}";
+          }
+        }
+
+}
+

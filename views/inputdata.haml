@@ -1,16 +1,21 @@
 %html
   %head
-    %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
+    %script{:type => 'text/javascript', :src => "../js/jquery-2.1.4.min.js"}
+    %link{:rel => "stylesheet", :href => "/inputdata.css"}
   %body
     %h1 INPUT DATA
     %a{ href: "/"} home
     %p= @order_elements
     %p =================
-    %form{:action => "/create-user", :method => "post"}
-    - @order_elements.each do |e|
-      -# この辺のレイアウトとか、チェックする順番JSとか
-      -# あとユーザデータの設計
-      %input{:type => "checkbox", :name => "increments data"}
-      %p= e
-      %br
-    %input{:type => "submit",:value => "send"}
+    .items
+      %form{:action => "/create-user", :method => "post"}
+      - id = 0
+      - @order_elements.each do |e|
+        -# この辺のレイアウトとか、チェックする順番JSとか
+        -# あとユーザデータの設計
+        %input{:type => "checkbox", :name => "increments data", :id =>id}
+        %p= e
+        %br
+        - id = id + 1
+      %input{:type => "submit",:value => "send"}
+      %script{:type => 'text/javascript', :src => "../js/checkbox.js"}

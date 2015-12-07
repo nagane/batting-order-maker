@@ -27,4 +27,9 @@ class Server < Sinatra::Base
     Orders.create(params[:title],params[:field])
     haml :index
   end
+
+ get '/inputdata.css' do
+   content_type 'text/css', :charset => 'utf-8'
+   scss :inputdata
+ end
 end
