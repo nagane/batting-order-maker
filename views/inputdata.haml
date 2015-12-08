@@ -7,20 +7,19 @@
     %a{ href: "/"} home
     %p= @order_elements
     %p =================
-    .items
-      %form{:action => "/create-user", :method => "post"}
-        - id = 0
-        - @order_elements.each do |e|
-          -# この辺のレイアウトとか、チェックする順番JSとか
-          -# あとユーザデータの設計
-          %input{:type => "checkbox", :name => "elm[]", :value => e, :id =>id}
-          %p= e
-          %br
-          - id = id + 1
-          - num = 1..10
-          %select
-            - num.each do |e|
-              %option{:value => e,:selected => e.odd? }
-                #{e}の値
-        %input{:type => "submit",:value => "send"}
-      %script{:type => 'text/javascript', :src => "../js/checkbox.js"}
+    %form{:action => "/create-user", :method => "post"}
+      %input{:type => "text",:name => "name"}
+      - @order_elements.each do |e|
+        -# この辺のレイアウトとか
+        %p= e
+        %select{:name => e }
+          - (0..10).each do |e|
+            - if e == 0
+              %option{:value => e,:selected => e }
+                #{e}
+            - else
+              %option{:value => e}
+                #{e}
+        %br
+      %input{:type => "hidden",:name => "hash",:value=> @order_key }
+      %input{:type => "submit",:value => "send"}

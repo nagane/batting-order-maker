@@ -18,6 +18,7 @@ class Server < Sinatra::Base
 
   get '/input-data/:order_key' do
     @order_elements = Orders.get_order_eletemts(params[:order_key])
+    @order_key = params[:order_key]
     haml :inputdata
   end
 
