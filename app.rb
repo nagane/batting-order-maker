@@ -32,4 +32,9 @@ class Server < Sinatra::Base
    content_type 'text/css', :charset => 'utf-8'
    scss :inputdata
  end
+
+ post '/create-user' do
+   #p "#{params[:elm]}"
+   p "#{params}"
+ end
 end

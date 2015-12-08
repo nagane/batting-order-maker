@@ -20,6 +20,8 @@ function addSelectedOrder (input, orders) {
         for(var j=0; j< input.length; j++) {
           if (input[j].id == orders[l]) {
             input[j].className = "order" + (l + 1);
+            //valueに数字追加するのはアカン感じ
+            //input[j].value = input[j].value + (l + 1);
           }
         }
       }
