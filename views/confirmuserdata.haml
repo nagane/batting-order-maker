@@ -2,5 +2,20 @@
   %head
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
   %body
-    %p confirm-userdata
-    %p= @obj
+    %form{:action => "/create-user", :method => "post"}
+      %p user data
+      %p= @obj
+      %p= @obj[:name]
+      %p= @obj.invert["1"]
+      %p= @obj.invert["2"]
+      %p= @obj.invert["3"]
+      %p= @obj.invert["4"]
+      %p= @obj.invert["5"]
+      %p= @obj.invert["7"]
+      %p= @obj.invert["8"]
+      %p= @obj.invert["9"]
+      %p ok ?
+      - @obj.each do |k , v|
+        %input{:type => "hidden",:name => k, :value => v}
+      %input{:type => "submit", :value => "ok"}
+
