@@ -29,13 +29,18 @@ class Server < Sinatra::Base
     haml :index
   end
 
- get '/inputdata.css' do
-   content_type 'text/css', :charset => 'utf-8'
-   scss :inputdata
- end
+  get '/inputdata.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    scss :inputdata
+  end
 
- post '/create-user' do
-   #p "#{params[:elm]}"
-   p "#{params}"
- end
+  post '/confirm-userdata' do
+    @obj = params
+    haml :confirmuserdata
+  end
+
+  post '/create-user' do
+    p "#{params}"
+    redirect to('/')
+  end
 end
