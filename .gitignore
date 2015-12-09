@@ -1,5 +1,6 @@
 *.swp
 .secret
-data/*
+data/users/*
+data/orders/*
 !.gitkeep
 .sass-cache/*

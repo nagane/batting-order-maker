@@ -2,7 +2,7 @@ require 'pathname'
 require 'securerandom'
 
 class Orders
-  @path = Pathname.new("./data")
+  @path = Pathname.new("./data/orders")
 
   def self.create(title,element)
     title_id = SecureRandom.hex
