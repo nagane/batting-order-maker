@@ -23,6 +23,10 @@ class Server < Sinatra::Base
     haml :inputdata
   end
 
+  get '/show-usrs-data/:order_key' do
+  
+  end
+
   post '/create-order' do
     #"test #{params[:str]}"
     @f = Orders.get_order_titles

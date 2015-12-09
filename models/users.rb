@@ -15,6 +15,14 @@ class Users
     end
   end
 
+  def self.get_inputed_date(order_key)
+    open(@path + order_key) do |file|
+      file.each do |line|
+
+      end
+    end
+  end
+
   def self.delete
 
   end
