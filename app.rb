@@ -5,6 +5,7 @@ require 'coffee-script'
 
 require_relative 'models/init'
 require_relative 'models/orders'
+require_relative 'models/users'
 
 class Server < Sinatra::Base
   get '/' do
@@ -40,7 +41,7 @@ class Server < Sinatra::Base
   end
 
   post '/create-user' do
-    p "#{params}"
+    Users.create(params)
     redirect to('/')
   end
 end
