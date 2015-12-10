@@ -11,4 +11,9 @@
     - @f.each do |index, title|
       %a{ href:"/input-data/#{index}"} #{title}
       %br
+    %p =================
+    %h1 show
+    - @f.each do |index, title|
+      %a{ href:"/show-users-data/#{index}"} #{title}
+      %br
 

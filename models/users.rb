@@ -16,10 +16,10 @@ class Users
   end
 
   def self.get_inputed_date(order_key)
-    open(@path + order_key) do |file|
-      file.each do |line|
-
-      end
+    # File.open(@path + order_key) do |file| でやろうとすると上手くいかない
+    data = File.open(@path + order_key).read
+    data.split("\n").each do |line|
+      p line
     end
   end
 

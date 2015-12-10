@@ -23,8 +23,8 @@ class Server < Sinatra::Base
     haml :inputdata
   end
 
-  get '/show-usrs-data/:order_key' do
-  
+  get '/show-users-data/:order_key' do
+    Users.get_inputed_date(params[:order_key])
   end
 
   post '/create-order' do
