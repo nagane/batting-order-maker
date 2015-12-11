@@ -39,6 +39,7 @@ class Users
       userdata = line.split(",")
       users_data.push(UserData.new(*userdata))
     end
+    return users_data
   end
 
   def self.delete
