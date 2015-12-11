@@ -25,6 +25,7 @@ class Server < Sinatra::Base
 
   get '/show-users-data/:order_key' do
     @users_data = Users.get_inputed_date(params[:order_key])
+    haml :ShowUsersData
   end
 
   post '/create-order' do
