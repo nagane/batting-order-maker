@@ -5,6 +5,7 @@
     %h1 SHOW USERS DATA
     %a{ href: "/" } home
     %table
-      %tr
-        %td
-          %p td obj
+      - @users_data.each do |user| 
+        %tr
+          %td
+            %p= user.name
