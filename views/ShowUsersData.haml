@@ -5,7 +5,16 @@
     %h1 SHOW USERS DATA
     %a{ href: "/" } home
     %table
-      - @users_data.each do |user| 
-        %tr
+      - x = 0
+      %tr
+        %td
+          %p name
+        - @users_data.each do |user| 
           %td
             %p= user.name
+      %tr
+        %td 
+          %p 1
+        - @users_data.each do |user| 
+          %td
+            %p= user[1]
