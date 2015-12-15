@@ -29,10 +29,9 @@ class Server < Sinatra::Base
   end
 
   post '/create-order' do
-    #"test #{params[:str]}"
     @f = Orders.get_order_titles
     Orders.create(params[:title],params[:field])
-    haml :index
+    redirect to('/')
   end
 
   get '/inputdata.css' do
