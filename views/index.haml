@@ -1,19 +1,18 @@
 %html
   %head
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
-    %script{:type => 'text/javascript', :src => "./js/main.js"}
+    %script{:type => 'text/javascript', :src => "./js/bootstrap.min.js"}
+    %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
   %body
     %h1 BOM
-    %a{ href: "make" } make
-    %p top PAGE
-    %p= @f
     %p =================
+    %h1 受付
     - @f.each do |index, title|
       %a{ href:"/input-data/#{index}"} #{title}
       %br
     %p =================
-    %h1 show
+    %h1 見る
     - @f.each do |index, title|
       %a{ href:"/show-users-data/#{index}"} #{title}
       %br
-
+    %a{ href: "make" ,class: "btn btn-info"} 作る
