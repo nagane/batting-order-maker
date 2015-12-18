@@ -6,25 +6,30 @@
   %body
     %h1 入力する
     %p =================
-    .row-fluid
+    .table
       %form{:action => "/confirm-userdata", :method => "post"}
-        %p name
-        %input{:type => "text",:name => "name"}
+        .tr
+          .th
+            %p name
+          .th
+            %input{:type => "text",:name => "name"}
         - @order_elements.each do |e|
           -# この辺のレイアウトとか
-          .span6
-            %p= e
-          %select{:name => e }
-            - (0..10).each do |e|
-              - if e == 0
-                %option{:value => e,:selected => e }
-                  #{e}
-              - else
-                %option{:value => e}
-                  #{e}
-          %br
+          .tr
+            .th
+              %p= e
+            .th
+              %select{:name => e }
+                - (0..10).each do |e|
+                  - if e == 0
+                    %option{:value => e,:selected => e }
+                      #{e}
+                  - else
+                    %option{:value => e}
+                      #{e}
+        %br
         %input{:type => "hidden",:name => "hash",:value=> @order_key }
-        %input{:type => "submit",:value => "send"}
+        %input{:type => "submit",:class => "btn btn-info",:value => "send"}
         %br
         %a{ href: "/",class: "btn btn-info"} home
 
