@@ -6,14 +6,15 @@
   %body
     %h1 SHOW USERS DATA
     %a{ href: "/" } home
-    %table
-      - (0..12).each do |e|
-        %tr
-          %td
-            - if e == 0
-              %p name
-            - else
-              %p= e
-          -@users_data.each do |user|
+    .table-responsive
+      %table
+        - (0..12).each do |e|
+          %tr
             %td
-              %p= user[e]
+              - if e == 0
+                %p name
+              - else
+                %p= e
+            -@users_data.each do |user|
+              %td
+                %p= user[e]

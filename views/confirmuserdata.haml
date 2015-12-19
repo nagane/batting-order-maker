@@ -5,8 +5,6 @@
     %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
   %body
     %form{:action => "/create-user", :method => "post"}
-      %p user data
-      %p= @obj
       %p= @obj[:name]
       %p= @obj.invert["1"]
       %p= @obj.invert["2"]
