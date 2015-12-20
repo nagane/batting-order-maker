@@ -1,20 +1,21 @@
 %html
   %head
-    %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
-    %script{:type => 'text/javascript', :src => "./js/bootstrap.min.js"}
-    %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
+    %script{:type => 'text/javascript', :src => "../js/jquery-2.1.4.min.js"}
+    %script{:type => 'text/javascript', :src => "../js/bootstrap.min.js"}
+    %link{:rel => "stylesheet", :href => "../css/bootstrap.min.css"}
   %body
     %h1 SHOW USERS DATA
     %a{ href: "/" } home
-    .table-responsive
-      %table
-        - (0..12).each do |e|
-          %tr
-            %td
-              - if e == 0
-                %p name
-              - else
-                %p= e
-            -@users_data.each do |user|
-              %td
-                %p= user[e]
+    .container-fluid
+      .table-responsive
+        %table{class: "table"}
+          - (0..12).each do |e|
+            %tr
+              %td{ style: "width:5%"}
+                - if e == 0
+                  %p 
+                - else
+                  %p= e
+              -@users_data.each do |user|
+                %td{ style: "width:300px"}
+                  %p= user[e]
