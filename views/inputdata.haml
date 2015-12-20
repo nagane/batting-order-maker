@@ -20,10 +20,19 @@
               %p= e
             .th
               %select{:name => e }
-                - (0..10).each do |e|
+                - (0..12).each do |e|
                   - if e == 0
                     %option{:value => e,:selected => e }
                       #{e}
+                  - elsif e == 10
+                    %option{:value => e}
+                      先発
+                  - elsif e == 11
+                    %option{:value => e}
+                      中継
+                  - elsif e == 12
+                    %option{:value => e}
+                      抑え
                   - else
                     %option{:value => e}
                       #{e}

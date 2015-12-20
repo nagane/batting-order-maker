@@ -4,8 +4,6 @@
     %script{:type => 'text/javascript', :src => "../js/bootstrap.min.js"}
     %link{:rel => "stylesheet", :href => "../css/bootstrap.min.css"}
   %body
-    %h1 SHOW USERS DATA
-    %a{ href: "/" } home
     .container-fluid
       .table-responsive
         %table{class: "table"}
@@ -14,8 +12,15 @@
               %td{ style: "width:5%"}
                 - if e == 0
                   %p 
+                - elsif e == 10
+                  先発
+                - elsif e == 11
+                  中継
+                - elsif e == 12
+                  抑え
                 - else
                   %p= e
               -@users_data.each do |user|
                 %td{ style: "width:300px"}
                   %p= user[e]
+    %a{ href: "/" } home
