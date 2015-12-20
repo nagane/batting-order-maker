@@ -23,7 +23,7 @@ class Users
     File.open(@path + params[:hash] , "a") do |file|
       file.print params[:name] 
       file.print ","
-      (1..9).each do |num|
+      (1..12).each do |num|
         file.print params.invert[num.to_s]
         file.print ","
       end
