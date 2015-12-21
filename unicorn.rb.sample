@@ -1,4 +1,4 @@
-@dir = "/home/htdocs/batting-order-maker/"
+@dir = "/home/htdocs/a-batting-order-maker/"
 
 worker_processes 2 # CPUのコア数に揃える
 working_directory @dir
@@ -13,4 +13,4 @@ stderr_path "#{@dir}/unicorn.stderr.log"
 stdout_path "#{@dir}/unicorn.stdout.log"
 
 # listen 80
-listen "/home/htdocs/batting-order-maker/unicorn.sock", backlog: 1024
+listen "/home/htdocs/a-batting-order-maker/unicorn.sock", backlog: 1024
