@@ -6,15 +6,16 @@
     %script{:type => 'text/javascript', :src => "./js/form_append.js"}
     %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
   %body
-    %h3 新しく打順を募集する
+    %h3 選手を追加する
     %hr
-    %form{:action => "/create-order", :method => "post"}
-      %h4 打順の名前
-      %input{:type => "text",:name => "title"}
+    %form{:action => "/add-order", :method => "post"}
+      %h4 打順名 : #{@title}
+      %br
       %h4 選手名(打順の要素)
       #append_area
         %input{:type => "text",:name => "field[]"}
         %input{:type => "button",:id => "append",:value => "追加する"}
+      %input{:type => "hidden",:name => "order_key_hash",:value=> @order_key }
       %input{class: "btn btn-info", :type => "submit",:value => "決定"}
       %a{ href: "/", class: "btn btn-info"} home
 
