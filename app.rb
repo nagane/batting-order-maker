@@ -24,6 +24,8 @@ class Server < Sinatra::Base
   end
 
   get '/show-users-data/:order_key' do
+    @titles = Orders.get_order_titles
+    @title = @titles[params[:order_key]]
     @users_data = Users.get_inputed_date(params[:order_key])
     haml :ShowUsersData
   end
