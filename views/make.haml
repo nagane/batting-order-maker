@@ -5,15 +5,16 @@
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
     %script{:type => 'text/javascript', :src => "./js/form_append.js"}
   %body
-    %p make BO
-    %a{ href: "/" } home
+    %h3 新しく打順を募集する
+    %hr
     %form{:action => "/create-order", :method => "post"}
-      %p Title
+      %h4 打順の名前
       %input{:type => "text",:name => "title"}
-      %p object
+      %h4
       #append_area
         %input{:type => "text",:name => "field[]"}
         %input{:type => "button",:id => "append",:value => "append"}
-      %input{:type => "submit",:value => "send"}
+      %input{:type => "submit",:value => "決定"}
+    %a{ href: "/" } home
 
 

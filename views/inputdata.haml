@@ -6,13 +6,13 @@
     %script{:type => 'text/javascript', :src => "../js/bootstrap.min.js"}
     %link{:rel => "stylesheet", :href => "../css/bootstrap.min.css"}
   %body
-    %h1 打順を作る
+    %h4 打順を作る
     %hr
     .table
       %form{:action => "/confirm-userdata", :method => "post"}
         .tr
           .th
-            %p name
+            %b name
           .th
             %input{:type => "text",:name => "name"}
           %hr
@@ -41,7 +41,6 @@
                       #{e}
         %br
         %input{:type => "hidden",:name => "hash",:value=> @order_key }
-        %input{:type => "submit",:class => "btn btn-info",:value => "send"}
-        %br
+        %input{:type => "submit",:class => "btn btn-info",:value => "かくにん"}
         %a{ href: "/",class: "btn btn-info"} home
 
