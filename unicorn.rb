@@ -1,0 +1,16 @@
+@dir = "/home/htdocs/batting-order-maker/"
+
+worker_processes 2 # CPUのコア数に揃える
+working_directory @dir
+
+timeout 300
+listen 8080
+
+pid "#{@dir}unicorn.pid" #pidを保存するファイル
+
+# unicornは標準出力には何も吐かないのでログ出力を忘れずに
+stderr_path "#{@dir}/unicorn.stderr.log"
+stdout_path "#{@dir}/unicorn.stdout.log"
+
+# listen 80
+listen "/home/htdocs/batting-order-maker/unicorn.sock", backlog: 1024

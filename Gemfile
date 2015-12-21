@@ -5,6 +5,8 @@ gem "sass"
 gem "haml"
 gem "coffee-script"
 gem "shotgun"
+gem "unicorn"
+gem "therubyracer"
 
 group :test do
   gem 'rspec'
