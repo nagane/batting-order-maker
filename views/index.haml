@@ -1,20 +1,24 @@
 !!! 5
+%meta{name: "viewport", content: "width=device-width"}
 %html
   %head
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
     %script{:type => 'text/javascript', :src => "./js/bootstrap.min.js"}
     %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
   %body
-    %h2 BOM
-    %hr
-    %h4 受付中
-    - @f.each do |index, title|
-      %a{ href:"/input-data/#{index}"} #{title}
-      %br
-    %hr
-    %h4 見る
-    - @f.each do |index, title|
-      %a{ href:"/show-users-data/#{index}"} #{title}
-      %br
-    %hr
-    %a{ href: "make" ,class: "btn btn-info"} 作る
+  .container-fluid
+    .row
+      .col-xs-12
+        %h2 BOM
+      %hr
+      %h4 受付中
+      - @f.each do |index, title|
+        %a{ href:"/input-data/#{index}"} #{title}
+        %br
+      %hr
+      %h4 見る
+      - @f.each do |index, title|
+        %a{ href:"/show-users-data/#{index}"} #{title}
+        %br
+      %hr
+      %a{ href: "make" ,class: "btn btn-info"} 作る

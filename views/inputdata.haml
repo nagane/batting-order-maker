@@ -1,3 +1,5 @@
+!!! 5
+%meta{name: "viewport", content: "width=device-width"}
 %html
   %head
     %script{:type => 'text/javascript', :src => "../js/jquery-2.1.4.min.js"}
@@ -5,7 +7,7 @@
     %link{:rel => "stylesheet", :href => "../css/bootstrap.min.css"}
   %body
     %h1 入力する
-    %p =================
+    %hr
     .table
       %form{:action => "/confirm-userdata", :method => "post"}
         .tr
@@ -13,6 +15,7 @@
             %p name
           .th
             %input{:type => "text",:name => "name"}
+          %hr
         - @order_elements.each do |e|
           -# この辺のレイアウトとか
           .tr
