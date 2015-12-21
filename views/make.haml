@@ -2,17 +2,17 @@
 %meta{name: "viewport", content: "width=device-width"}
 %html
   %head
-    %title 打順メーカー
+    %title 打線メーカー
     %script{:type => 'text/javascript', :src => "./js/jquery-2.1.4.min.js"}
     %script{:type => 'text/javascript', :src => "./js/form_append.js"}
     %link{:rel => "stylesheet", :href => "./css/bootstrap.min.css"}
   %body
-    %h3 新しく打順を募集する
+    %h3 新しく打線を募集する
     %hr
     %form{:action => "/create-order", :method => "post"}
-      %h4 打順の名前
+      %h4 打線の名前
       %input{:type => "text",:name => "title"}
-      %h4 選手名(打順の要素)
+      %h4 選手名(打線の要素)
       #append_area
         %input{:type => "text",:name => "field[]"}
         %input{:type => "button",:id => "append",:value => "追加する"}
