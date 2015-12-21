@@ -15,6 +15,13 @@ class Orders
     end
   end
 
+  def self.add_order_object(title_hash_key,element)
+    File.open(@path + title_hash_key , "a") do |file|
+      file.puts element
+    end
+    p title_hash_key
+  end
+
   def self.get_order_titles
     data = open(@path + "orders-title-hash.txt").read
     Hash[*data.split("\n").map{|e| e.split(",")}.flatten]

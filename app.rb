@@ -30,10 +30,22 @@ class Server < Sinatra::Base
     haml :ShowUsersData
   end
 
+  post '/add-order-object' do
+    @titles = Orders.get_order_titles
+    @title = @titles[params[:hash]]
+    @order_key = params[:hash]
+    haml :AddOrderObject
+  end
+
   post '/create-order' do
     @f = Orders.get_order_titles
     Orders.create(params[:title],params[:field])
     redirect to('/')
+  end
+
+  post '/add-order' do
+    Orders.add_order_object(params[:order_key_hash],params[:field])
+    redirect to('/input-data/' + params[:order_key_hash])
   end
 
   get '/inputdata.css' do
