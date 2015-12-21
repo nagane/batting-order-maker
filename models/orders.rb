@@ -3,11 +3,16 @@ require 'securerandom'
 
 class Orders
   @path = Pathname.new("./data/orders")
+  @userpath = Pathname.new("./data/users")
 
   def self.create(title,element)
     title_id = SecureRandom.hex
     File.open(@path + title_id , "w") do |file|
       file.puts element
+    end
+
+    File.open(@userpath + title_id , "a") do |file|
+      file.puts ""
     end
 
     File.open(@path + "orders-title-hash.txt","a") do |file|
