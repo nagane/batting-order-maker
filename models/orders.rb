@@ -3,6 +3,7 @@ require 'securerandom'
 
 class Orders
   @path = Pathname.new("./data/orders")
+  @userpath = Pathname.new("./data/users")
 
   def self.create(title,element)
     title_id = SecureRandom.hex
@@ -17,6 +18,13 @@ class Orders
     File.open(@path + "orders-title-hash.txt","a") do |file|
       file.puts title_id + "," + title
     end
+  end
+
+  def self.add_order_object(title_hash_key,element)
+    File.open(@path + title_hash_key , "a") do |file|
+      file.puts element
+    end
+    p title_hash_key
   end
 
   def self.get_order_titles

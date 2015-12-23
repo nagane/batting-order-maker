@@ -1,18 +1,29 @@
+!!! 5
+%meta{name: "viewport", content: "width=device-width"}
 %html
   %head
+    %title 打線メーカー
     %script{:type => 'text/javascript', :src => "../js/jquery-2.1.4.min.js"}
     %script{:type => 'text/javascript', :src => "../js/bootstrap.min.js"}
     %link{:rel => "stylesheet", :href => "../css/bootstrap.min.css"}
+    :javascript
+      function sendConfirm(){
+        document.getElementById('form').action = '/confirm-userdata';
+      }
+      function sendAddOrder(){
+        document.getElementById('form').action = '/add-order-object';
+      }
   %body
-    %h1 入力する
-    %p =================
+    %h4 打線を作る
+    %hr
     .table
-      %form{:action => "/confirm-userdata", :method => "post"}
+      %form{:action => "/confirm-userdata", :method => "post", :id  => "form"}
         .tr
           .th
-            %p name
+            %b name
           .th
             %input{:type => "text",:name => "name"}
+          %hr
         - @order_elements.each do |e|
           -# この辺のレイアウトとか
           .tr
@@ -38,7 +49,7 @@
                       #{e}
         %br
         %input{:type => "hidden",:name => "hash",:value=> @order_key }
-        %input{:type => "submit",:class => "btn btn-info",:value => "send"}
-        %br
+        %input{:type => "submit",:class => "btn btn-info",:value => "かくにん",:onclick => "sendConfirm()"}
+        %input{:type => "submit",:class => "btn btn-info",:value => "追加する",:onclick => "sendAddOrder()"}
         %a{ href: "/",class: "btn btn-info"} home
 

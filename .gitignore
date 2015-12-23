@@ -4,3 +4,8 @@ data/users/*
 data/orders/*
 !.gitkeep
 .sass-cache/*
+unicorn.pid
+unicorn.rb
+unicorn.sock
+unicorn.stderr.log
+unicorn.stdout.log
