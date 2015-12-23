@@ -10,6 +10,10 @@ class Orders
       file.puts element
     end
 
+    if title == ""
+      title = "無題"
+    end
+
     File.open(@path + "orders-title-hash.txt","a") do |file|
       file.puts title_id + "," + title
     end
